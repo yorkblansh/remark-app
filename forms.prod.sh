@@ -1,0 +1,1 @@
+docker compose -f ./forms/docker/docker-compose.yaml --env-file ./forms/configs/.env.prod up --build -d

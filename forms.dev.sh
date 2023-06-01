@@ -1,0 +1,1 @@
+docker compose -f ./forms/docker/docker-compose.yaml -f ./forms/docker/mount-app.yaml --env-file ./forms/configs/.env.dev up --build -d

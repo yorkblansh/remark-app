@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  storybook:
+    container_name: storybook
+    build:
+      context: ./web
+      dockerfile: docker/configs/Dockerfile.sb.serve.static
+    volumes:
+      - "./web/app/workspaces/storybookv7/storybook-static:/static"
+    ports:
+      - ${SB_PORT}:3000
+    tty: true
+    stdin_open: true
+    restart: on-failure

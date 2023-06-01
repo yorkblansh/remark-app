@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "arcanis.vscode-zipfs",
+    "esbenp.prettier-vscode",
+    "pranaygp.vscode-css-peek",
+    "csstools.postcss",
+    "vunguyentuan.vscode-postcss",
+    "bradlc.vscode-tailwindcss"
+  ]
+}

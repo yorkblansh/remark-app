@@ -1,0 +1,174 @@
+table {
+	border: 1px solid black;
+	border-spacing: 0px;
+	border-collapse: collapse;
+
+	& > thead {
+		// border: 1px solid black;
+
+		& > tr {
+			// border: 1px solid black;
+
+			& > th {
+				border: 1px solid black;
+			}
+		}
+	}
+
+	& > tbody {
+		& > tr {
+			& > td {
+				border: 1px solid black;
+				font-size: 10px;
+				text-align: center;
+				// column-width: 50px;
+				width: 50px;
+				word-wrap: break-word;
+				line-height: 10px;
+			}
+
+			& > .width-free {
+				// column-width: auto;
+			}
+		}
+	}
+}
+
+.table {
+	display: flex;
+	flex-direction: row;
+
+	border-style: solid;
+	border-width: 1px;
+
+	height: 200px;
+
+	// левая колонка
+	& > .left-column {
+		display: flex;
+		flex-direction: column;
+
+		& > div {
+			border-style: solid;
+			border-width: 1px;
+
+			& > p {
+				margin: 0;
+			}
+		}
+	}
+
+	// средння колонка
+	& > .middle-column {
+		display: flex;
+		flex-direction: column;
+		& > div {
+			display: flex;
+
+			border-style: solid;
+			border-width: 1px;
+
+			& > div {
+				border-style: solid;
+				border-width: 1px;
+			}
+		}
+
+		& > .number-of-containers {
+			& > p {
+				margin: 0;
+			}
+		}
+
+		& > .noc-sections {
+			height: -webkit-fill-available;
+		}
+
+		// & > .noc-values {
+		// 	display: flex;
+		// }
+
+		// & > .noc-sum-values {
+		// 	display: flex;
+		// }
+	}
+
+	& > .right-column {
+		display: flex;
+
+		& > .amount-column {
+			border-style: solid;
+			border-width: 1px;
+
+			& > div {
+				border-style: solid;
+				border-width: 1px;
+			}
+		}
+
+		& > .amount-rpo-column {
+			border-style: solid;
+			border-width: 1px;
+
+			& > div {
+				border-style: solid;
+				border-width: 1px;
+			}
+		}
+	}
+}
+
+.container {
+	margin-left: 5px;
+	display: grid;
+	grid-template-columns: [left] 150px [middle] repeat(11, 30px) [amount] repeat(
+			2,
+			50px
+		);
+	grid-template-rows: 10px auto auto auto;
+	grid-auto-flow: column dense;
+	box-sizing: border-box;
+	grid-gap: 1px;
+	// align-items: center;
+	text-align: center;
+
+	// border-style: solid;
+	// border-color: black;
+	// border-width: 0.1px;
+
+	& > div {
+		// align-self: center;
+		border-color: transparent;
+
+		// margin: -0.5px -0.5px; /* fixed width value missing */
+
+		box-shadow: 0 0 0 1px black;
+		// border: solid 1px black;
+		justify-content: center;
+		overflow-wrap: anywhere;
+		// height: 100px;
+		display: flex;
+		align-items: center;
+		// grid-column-end: five;
+		// grid-row-start: row1-start;
+		// grid-row-end: 3;
+
+		& > div {
+			overflow-wrap: break-word;
+		}
+	}
+
+	// "количество емкостей"
+	& > .wide-row {
+		grid-column-start: 2;
+		grid-column-end: span 11;
+		height: auto;
+		// grid-row-start: 2;
+		// grid-row-end: span 2;
+	}
+
+	& > .wide-column {
+		grid-row-start: 1;
+		grid-row-end: span 2;
+	}
+}

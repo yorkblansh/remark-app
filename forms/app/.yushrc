@@ -1,0 +1,17 @@
+your_useful_scripts:
+  update generated:
+    cmd:
+      - yarn run script:generate-form-enum
+      # - yarn run script:generate-form-interfaces
+      # - yarn run script:generate-static-temlates
+      # - yarn run script:generate-jsx-forms-map
+
+      # - yarn run react:build:form23a
+      # - yarn run react:build:form16
+
+      # - yarn run script:update-api-by-forms
+
+      # - yarn run api:build
+    type: 'npm_script'
+  npm:
+    cmd: npm

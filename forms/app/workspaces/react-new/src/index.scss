@@ -1,11 +1,9 @@
 @import './sass/main.scss';
-@import './styles/global.scss';
+// @import './styles/global.scss';
 
 $table-padding-top: 45px;
 $header-strokes-gap: 4px;
 $header-elements-gap: 10px;
-
-@tailwind utilities;
 
 .layout {
 	display: flex;

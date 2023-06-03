@@ -1,10 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { JsxFormsMap } from './@generated/JsxFormsMap'
 import { pipe } from 'fp-ts/lib/function'
-import { BarcodesLayout } from './barcodes-layout/BarcodesLayout'
-import { barcodesLayoutProps } from './barcodes-layout/barcodesLayoutProps'
-import { BarcodeApp } from './barcode-app/BarcodeApp'
 import { App } from './App'
 
 // const BARCODE_TEMPLATE = process.env.BARCODE_TEMPLATE as

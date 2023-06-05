@@ -1,0 +1,96 @@
+.rainbow {
+	animation: colorchange 1.5s linear infinite; /* animation-name followed by duration in seconds*/
+	-webkit-animation: colorchange 1.5s linear infinite; /* Chrome and Safari */
+	-moz-animation: colorchange 1.5s linear infinite;
+	-o-animation: colorchange 1.5s linear infinite;
+}
+
+#box {
+	margin: auto;
+	box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.4);
+	width: 70%;
+	color: #fff;
+	font-style: oblique;
+	font-size: 40px;
+	text-align: center;
+}
+
+// h1,
+// h2 {
+// 	font-strech: condensed;
+// 	animation: colorchange alternate infinite;
+// 	-webkit-animation: colorchange alternate infinite;
+// 	-moz-animation: colorchange alternate infinite;
+// 	-o-animation: colorchange alternate infinite;
+
+// 	animation-duration: 10s;
+// 	animation-iteration-count: 3;
+// 	animation-direction: alternate;
+// 	font-style: italic;
+// 	font-size: 3em;
+// 	text-align: center;
+// }
+
+@keyframes colorchange {
+	0%,
+	100% {
+		border-color: #838383;
+	}
+	// 5% {
+	// 	stroke: #49a016;
+	// }
+	// 10% {
+	// 	stroke: #a01672;
+	// }
+	// 15% {
+	// 	stroke: #a0165b;
+	// }
+	// 20% {
+	// 	stroke: #e6c63a;
+	// }
+	25% {
+		border-color: #838383;
+	}
+	// 30% {
+	// 	stroke: #16a085;
+	// }
+	// 35% {
+	// 	stroke: #16a085;
+	// }
+	// 40% {
+	// 	stroke: #16a085;
+	// }
+	// 45% {
+	// 	stroke: #16a085;
+	// }
+	50% {
+		border-color: whitesmoke;
+	}
+	// 55% {
+	// 	stroke: #16a085;
+	// }
+	// 60% {
+	// 	stroke: #16a085;
+	// }
+	// 65% {
+	// 	stroke: #16a085;
+	// }
+	// 70% {
+	// 	stroke: #16a085;
+	// }
+	75% {
+		border-color: #838383;
+	}
+	// 80% {
+	// 	stroke: #16a085;
+	// }
+	// 85% {
+	// 	stroke: #16a085;
+	// }
+	// 90% {
+	// 	stroke: #16a085;
+	// }
+	95% {
+		border-color: #838383;
+	}
+}

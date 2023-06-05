@@ -1,0 +1,10 @@
+import { FORMS } from '../@generated/forms.enum'
+import { Page as form16 } from '../forms/form16/Page'
+import { form23a } from '../forms/form23a/form23a'
+import { FormPage } from '../hooks/usePage'
+
+export const getFormPage = (form: keyof typeof FORMS) =>
+	({
+		form16,
+		form23a,
+	}[form] as FormPage<typeof form>)

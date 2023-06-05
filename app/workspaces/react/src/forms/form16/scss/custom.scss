@@ -1,0 +1,89 @@
+$values: 0px, 4px, 8px, 16px, 24px, 48px;
+
+@each $value in $values {
+	$i: index($values, $value) - 1;
+
+	.m-#{$i} {
+		margin: $value;
+	}
+
+	.my-#{$i} {
+		margin-top: $value;
+		margin-bottom: $value;
+	}
+
+	.mx-#{$i} {
+		margin-right: $value;
+		margin-left: $value;
+	}
+
+	.ml-#{$i} {
+		margin-left: $value;
+	}
+
+	.mr-#{$i} {
+		margin-right: $value;
+	}
+
+	// .mt-#{$i} {
+	// 	margin-top: $value;
+	// }
+
+	.mb-#{$i} {
+		margin-bottom: $value;
+	}
+
+	.p-#{$i} {
+		padding: $value;
+	}
+
+	.py-#{$i} {
+		padding-top: $value;
+		padding-bottom: $value;
+	}
+
+	.px-#{$i} {
+		padding-right: $value;
+		padding-left: $value;
+	}
+
+	.pl-#{$i} {
+		padding-left: $value;
+	}
+
+	.pr-#{$i} {
+		padding-right: $value;
+	}
+
+	.pt-#{$i} {
+		padding-top: $value;
+	}
+
+	.pb-#{$i} {
+		padding-bottom: $value;
+	}
+}
+
+.tac {
+	text-align: center;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.d-block {
+	display: block;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.fg {
+	flex-grow: 1;
+}
+
+/* .bold {
+	font-weight: 800;
+} */

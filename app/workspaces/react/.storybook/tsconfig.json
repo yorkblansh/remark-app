@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		// "moduleResolution": "node",
+		// "moduleDetection": "auto",
+		// "allowSyntheticDefaultImports": true,
+		"module": "CommonJS",
+		"isolatedModules": false,
+
+		"target": "ESNext"
+	}
+}

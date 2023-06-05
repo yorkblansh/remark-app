@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  api:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # network_mode: "host"
+    container_name: api-${ENV_MODE}
+    build:
+      context: ../app
+      dockerfile: ../docker/Dockerfile.app.${ENV_MODE}
+    ports:
+      - 85:5055
+      - 5172:5172
+    env_file:
+      - ../configs/.env
+    tty: true
+    stdin_open: true
+    restart: on-failure

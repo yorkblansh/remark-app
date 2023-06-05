@@ -1,0 +1,30 @@
+FROM node:18
+
+RUN mkdir /app
+WORKDIR /app
+COPY .yarn/ /app/.yarn
+COPY .yarnrc.yml /app
+COPY package.json /app
+COPY workspaces/api/package.json /app/workspaces/api/package.json
+COPY workspaces/react/package.json /app/workspaces/react/package.json
+
+RUN yarn install
+
+COPY workspaces/ /app/workspaces/
+
+RUN yarn install
+
+RUN yarn run script:generate-form-enum && \
+    yarn run script:generate-form-interfaces && \
+    yarn run script:generate-static-temlates && \
+    yarn run script:generate-jsx-forms-map && \
+    yarn run react:build:form23a && \
+    yarn run react:build:form16 && \
+    yarn run script:update-api-by-forms && \
+    yarn run api:build
+
+ENV PORT=5055
+
+EXPOSE 5055
+
+CMD [ "yarn","run", "api:start:prod" ]

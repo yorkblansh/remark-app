@@ -1,0 +1,5 @@
+services:
+  api:
+    user: jj
+    volumes:
+      - ./docker/forms-api-service/volumes/home/:/home/

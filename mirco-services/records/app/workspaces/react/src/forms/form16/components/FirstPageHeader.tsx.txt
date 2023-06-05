@@ -1,0 +1,113 @@
+import React from 'react'
+import { Form16Interface } from '../../../@generated/interfaces/form16.interface'
+import { MailLogo } from './MailLogo'
+import { PageProps } from '../../../hooks/usePage'
+
+export const FirstPageHeader = ({
+	sealNumber,
+	sendType,
+	indexTo,
+	barcode,
+	indexFrom,
+	type,
+}: Form16Interface) => {
+	return (
+		<header className="flex justify-between">
+			<section className="w-full">
+				<div className="flex">
+					<div className="flex items-center justify-center">
+						<MailLogo />
+					</div>
+					<div className="flex w-full flex-col self-end">
+						<div className="tac bold">Накладная</div>
+						<div className="d-flex mt-3">
+							<div style={{}}>№</div>
+							<div className="  bold tac underline">{barcode}</div>
+						</div>
+					</div>
+					<div className="mt-5">
+						<div className="box-date tac">
+							<div className="date">16.02.2023г</div>
+							<div className="time">15:33:24</div>
+							<div className="index">291920</div>
+							<div className="title">ЦОПП</div>
+						</div>
+						<div className="box-date-label">
+							(дата и место <br /> формирования)
+						</div>
+					</div>
+				</div>
+				<div className="row d-block">
+					<div className="mt-1">на РПО, отправленные</div>
+					<div className="d-flex mt-1">
+						<div className="mr-1">из</div>
+						<div className="  d-flex flex-column">
+							<div className="underline"> {indexFrom} Луганск ЦОПП </div>
+							<div className="mt-1 underline"></div>
+						</div>
+					</div>
+					<div className="d-flex mt-1">
+						<div className="mr-1"> в адрес </div>
+						<div className="d-flex   flex-column">
+							<div className="underline">
+								{indexTo} участок по обмену почтовых отправлений{' '}
+							</div>
+							<div className="mt-1 underline"></div>
+						</div>
+					</div>
+					{type === 'first' ? (
+						<div className="d-flex mt-2">
+							<div style={{ flex: '1 1 auto' }}>
+								<div className="mt-1">{sendType}</div>
+								<div className="d-flex mt-3">
+									<div className="mr-1"> № </div>
+									<div className="d-flex   flex-column">
+										<div className="underline"></div>
+									</div>
+								</div>
+								<div className="d-flex mt-2">
+									<div className="mr-1"> № пломбы </div>
+									<div className="d-flex   flex-column">
+										<div className="underline">{sealNumber}</div>
+									</div>
+								</div>
+							</div>
+							<div
+								style={{
+									flex: '1 1 auto',
+									maxWidth: '180px',
+								}}
+							>
+								<div className="tac">Страховая</div>
+							</div>
+						</div>
+					) : null}
+				</div>
+			</section>
+			<div>
+				<div className="tac bold">Общий счет</div>
+				<table className="total-table">
+					<tr>
+						<td>
+							Наименования <br /> почтовых отправлений
+						</td>
+						<td>Коли&shy;чество</td>
+					</tr>
+					<tr>
+						<td>Посылка</td>
+						<td>24</td>
+					</tr>
+					<tr>
+						<td>Письмо</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Итого</td>
+						<td>26</td>
+					</tr>
+				</table>
+			</div>
+			{/* </div> */}
+		</header>
+	)
+}

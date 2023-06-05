@@ -1,0 +1,14 @@
+header 
+{
+	display: block;
+	position: relative;
+
+	.page-info{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		font-size: 13px;
+		line-height: 15px;
+		text-align: right;
+	}
+}

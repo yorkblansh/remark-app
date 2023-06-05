@@ -1,17 +1,17 @@
 version: "3.8"
 
 services:
-  auth-api:
+  data-api:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     # network_mode: "host"
-    container_name: auth-api-${ENV_MODE}
+    container_name: data-api-${ENV_MODE}
     build:
       context: ../app
       dockerfile: ../docker/Dockerfile.app.${ENV_MODE}
     ports:
-      - 86:5055
-      - 5173:5172
+      - 88:5055
+      - 5175:5172
     env_file:
       - ../configs/.env
     tty: true

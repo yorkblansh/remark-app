@@ -1,4 +1,4 @@
 services:
-  auth-api:
+  data-api:
     volumes:
       - ../app:/app

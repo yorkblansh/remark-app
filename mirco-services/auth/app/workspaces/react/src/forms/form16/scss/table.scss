@@ -1,0 +1,43 @@
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+	border-spacing: 0px;
+
+	& > thead {
+		// border: 1px solid black;
+
+		& > tr {
+			// border: 1px solid black;
+
+			& > th {
+				border: 1px solid black;
+			}
+		}
+	}
+
+	& > tbody {
+		& > tr {
+			& > td {
+				border: 1px solid black;
+				// font-size: 10px;
+				// text-align: center;
+				// column-width: 50px;
+				// width: 50px;
+				// word-wrap: break-word;
+				// line-height: 10px;
+			}
+
+			& > .width-free {
+				// column-width: auto;
+			}
+		}
+	}
+
+	& > tfoot {
+		& > tr {
+			& > td {
+				border: 1px solid black;
+			}
+		}
+	}
+}

@@ -1,0 +1,140 @@
+/* .layout {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	box-sizing: border-box;
+	margin-right: auto;
+	margin-left: auto;
+	width: 780px;
+
+	height: 1287px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 15px;
+	font-family: "TimesNewRomanRegular", Times, serif, Inter, Avenir, Helvetica,
+		Arial, sans-serif;
+} */
+
+/* .barcode {
+	position: absolute;
+	// left: 40px;
+	top: 0;
+
+	img {
+		// width: 200px;
+		// height: 50px;
+	}
+
+	label {
+		display: block;
+		font-weight: 200;
+		font-size: 15px;
+		line-height: 13px;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		text-align: center;
+	}
+} */
+
+.print-info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-style: italic;
+}
+
+.underline-long {
+	border-bottom: 1px solid;
+	padding-bottom: 0px;
+	min-height: 16px;
+	// line-height: 15px;
+}
+
+.underline-text {
+	font-size: 11px;
+	line-height: 11px;
+	text-align: center;
+}
+
+.border {
+	border: 1px solid;
+}
+
+.items-table {
+	& > thead {
+		tr {
+			th {
+				border-width: 2px;
+				border-style: solid;
+
+				padding: 3px 6px;
+				// word-wrap: break-word;
+				font-weight: 100;
+				font-size: 10px;
+				line-height: 10px;
+			}
+		}
+	}
+
+	& > tbody {
+		border-width: 2px;
+		border-style: solid;
+
+		tr {
+			td {
+				padding: 3px 6px;
+				font-size: 11px;
+				line-height: 11px;
+			}
+
+			td:nth-child(1) {
+				// width: 500px;
+				text-align: left;
+			}
+			td:nth-child(2) {
+				text-align: center;
+			}
+			td:nth-child(3) {
+				text-align: right;
+			}
+			td:nth-child(4) {
+				border-right-width: 2px;
+				text-align: center;
+			}
+			td:nth-child(5) {
+				text-align: left;
+			}
+			td:nth-child(6) {
+				text-align: center;
+			}
+			td:nth-child(7) {
+				text-align: right;
+			}
+			td:nth-child(8) {
+				text-align: center;
+			}
+		}
+	}
+
+	& > tfoot {
+		tr {
+			td {
+				padding: 3px 6px;
+				font-size: 12px;
+				line-height: 12px;
+				text-align: left;
+			}
+			td:nth-child(1) {
+				font-weight: 800;
+			}
+			td:nth-child(2) {
+				font-style: italic;
+			}
+			td:nth-child(3) {
+				font-weight: 800;
+			}
+			td:nth-child(4) {
+				font-style: italic;
+			}
+		}
+	}
+}

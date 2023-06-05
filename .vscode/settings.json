@@ -32,7 +32,10 @@
       "gutterIcon": true
     }
   },
-  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "LAY", "INFO"]
+  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "LAY", "INFO"],
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 
   // "todo-tree.highlights.customHighlight": {
   //   // "TODO": {

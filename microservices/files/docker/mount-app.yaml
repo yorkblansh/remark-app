@@ -1,4 +1,4 @@
 services:
-  api:
+  files-api:
     volumes:
       - ../app:/app

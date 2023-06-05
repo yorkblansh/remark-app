@@ -1,1 +1,1 @@
-docker compose -f ./forms/docker/docker-compose.yaml -f ./forms/docker/mount-app.yaml --env-file ./forms/configs/.env.dev up --build -d
+docker compose -f ./microservices/gateway/docker/docker-compose.yaml -f ./microservices/gateway/docker/mount-app.yaml --env-file ./microservices/gateway/configs/.env.dev up --build -d

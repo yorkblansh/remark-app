@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { pipe } from 'fp-ts/lib/function'
-import { BarCodeWriter } from '../../../api/src/utils/bwipjs'
+import { BarCodeWriter } from '../../../gateway/src/utils/bwipjs'
 
 const NODE_ENV = process.env.NODE_ENV as 'development' | 'production'
 

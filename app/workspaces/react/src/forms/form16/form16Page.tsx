@@ -1,7 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 import { FormPage } from '../../interfaces/FormPage.interface'
-import { numberToWord } from '../../../../api/src/utils/numberToWord'
+import { numberToWord } from '../../../../gateway/src/utils/numberToWord'
 import { MailLogo } from './components/MailLogo'
 import { getFormBarcodes } from '../../utils/getBarCodes'
 import { useRpiNames } from '../../hooks/useRpiNames'

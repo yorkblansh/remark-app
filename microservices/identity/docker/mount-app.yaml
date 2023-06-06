@@ -1,4 +1,0 @@
-services:
-  data-api:
-    volumes:
-      - ../app:/app

@@ -1,6 +1,6 @@
 import { pipe } from 'fp-ts/lib/function'
-import { Form16Dto } from 'src/genpdf/dto/form16.dto'
-import { Form23ADto } from 'src/genpdf/dto/form23a.dto'
+import { Form16Dto } from 'src/auth/dto/form16.dto'
+import { Form23ADto } from 'src/auth/dto/form23a.dto'
 import { BarCodeWriter } from './bwipjs'
 import * as TO from 'fp-ts/lib/TaskOption'
 

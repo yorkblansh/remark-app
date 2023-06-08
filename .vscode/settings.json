@@ -35,6 +35,9 @@
   "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "LAY", "INFO"],
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
   }
 
   // "todo-tree.highlights.customHighlight": {

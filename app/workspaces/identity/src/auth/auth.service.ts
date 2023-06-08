@@ -43,7 +43,7 @@ const formsMap: {
 }
 
 @Injectable()
-export class GenpdfService {
+export class AuthService {
 	constructor(private readonly httpService: HttpService) {}
 
 	generateDocument: IgenerateDocument = async ({

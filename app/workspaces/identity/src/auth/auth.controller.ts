@@ -26,17 +26,17 @@ export class AuthController {
 				AND: [{ password }],
 			},
 
-			include: { files: true },
+			// include: { files: true },
 		})
 
-		const files = await Promise.all(
-			user.files.map(
-				async ({ fileId }) =>
-					await this.prismaService.file.findUnique({ where: { id: fileId } }),
-			),
-		)
+		// const files = await Promise.all(
+		// 	user.files.map(
+		// 		async ({ fileId }) =>
+		// 			await this.prismaService.file.findUnique({ where: { id: fileId } }),
+		// 	),
+		// )
 
-		console.dir({ user, files }, { depth: null })
+		console.dir({ user }, { depth: null })
 	}
 
 	@Post('/' + FORMS.form16)

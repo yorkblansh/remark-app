@@ -17,3 +17,18 @@ services:
     tty: true
     stdin_open: true
     restart: on-failure
+
+  redis:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # network_mode: "host"
+    container_name: redis
+    image: redis/redis-stack:latest
+    ports:
+      - 6379:6379
+      - 8001:8001
+    volumes:
+      - /db/redis/data:/data
+    tty: true
+    stdin_open: true
+    restart: on-failure

@@ -7,6 +7,7 @@ import { Form23ADto } from './dto/form23a.dto'
 import { Form16Dto } from './dto/form16.dto'
 import { PrismaService } from '../prisma.service'
 import { UserDto } from './dto/user.dto'
+import { RedisService } from '../redis/redis.service'
 
 @ApiTags('auth')
 @Controller('auth')
@@ -14,6 +15,7 @@ export class AuthController {
 	constructor(
 		private readonly genpdfService: AuthService,
 		private readonly prismaService: PrismaService,
+		private readonly redisService: RedisService,
 	) {}
 
 	@Post('/login')

@@ -27,7 +27,7 @@ export class UserDto {
 	 */
 	@IsString()
 	@ApiProperty({
-		example: '111',
+		example: '1112',
 		description: 'password',
 	})
 	password: string

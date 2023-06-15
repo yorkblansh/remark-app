@@ -1,4 +1,14 @@
-import { Controller, Body, Res, Post, Get } from '@nestjs/common'
+import {
+	Controller,
+	Body,
+	Res,
+	Post,
+	Get,
+	HttpException,
+	HttpStatus,
+	HttpCode,
+	Header,
+} from '@nestjs/common'
 import { AuthService } from './auth.service'
 import { FORMS } from '../../../react/src/@generated/forms.enum'
 import * as express from 'express'
@@ -8,6 +18,7 @@ import { Form16Dto } from './dto/form16.dto'
 import { PrismaService } from '../prisma.service'
 import { UserDto } from './dto/user.dto'
 import { RedisService } from '../redis/redis.service'
+import { User } from '.prisma/client'
 
 @ApiTags('auth')
 @Controller('auth')
@@ -18,27 +29,37 @@ export class AuthController {
 		private readonly redisService: RedisService,
 	) {}
 
+	@HttpCode(HttpStatus.OK)
 	@Post('/login')
 	@ApiOperation({ summary: 'login user' })
 	async login(@Body() userData: UserDto) {
 		const { email, login, password } = userData
-		const user = await this.prismaService.user.findFirst({
-			where: {
-				OR: [{ login }, { email }],
-				AND: [{ password }],
-			},
+		let user: User
 
-			// include: { files: true },
-		})
+		try {
+			user = await this.prismaService.user.findFirst({
+				where: {
+					OR: [{ login }, { email }],
+					AND: [{ password }],
+				},
+			})
+		} catch (FIND_USER_PRISMA_ERROR) {
+			console.log({ FIND_USER_PRISMA_ERROR })
+		}
 
-		// const files = await Promise.all(
-		// 	user.files.map(
-		// 		async ({ fileId }) =>
-		// 			await this.prismaService.file.findUnique({ where: { id: fileId } }),
-		// 	),
-		// )
-
-		console.dir({ user }, { depth: null })
+		if (user) {
+			const userHash = await this.redisService.setOnLoginTempKey(user.login)
+			return { userHash }
+		} else {
+			throw new HttpException(
+				{
+					status: HttpStatus.UNAUTHORIZED,
+					error: 'user not found',
+				},
+				HttpStatus.UNAUTHORIZED,
+				{ cause: Error('userrr nottt found') },
+			)
+		}
 	}
 
 	@Post('/' + FORMS.form16)

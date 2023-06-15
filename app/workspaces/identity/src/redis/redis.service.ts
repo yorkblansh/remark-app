@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 // import { createClient } from 'redis'
 import Redis from 'ioredis'
-import { createHmac } from 'node:crypto'
+import { createHash, createHmac } from 'node:crypto'
 
 @Injectable()
 export class RedisService {
@@ -15,10 +15,18 @@ export class RedisService {
 		this.client.set('var', 'varrr')
 	}
 
-	setOnLoginTempKey(login: string) {
-		const hash = createHmac('sha256', login + new Date().toUTCString())
-		const stringHash = String(hash)
+	async setOnLoginTempKey(login: string) {
+		// const hash = createHash('sha256').update(login).digest('hex')
+		const hash = createHmac('sha256', login + new Date().toUTCString()).digest(
+			'hex',
+		)
 
-		this.client.set(`user:key:${login}`, stringHash)
+		await this.client.set(`user:temp_key:${login}`, hash)
+
+		setTimeout(() => {
+			this.client.del(`user:temp_key:${login}`)
+		}, 1000000)
+
+		return hash
 	}
 }

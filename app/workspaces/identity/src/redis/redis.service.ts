@@ -15,8 +15,7 @@ export class RedisService {
 		this.client.set('var', 'varrr')
 	}
 
-	async setOnLoginTempKey(login: string) {
-		// const hash = createHash('sha256').update(login).digest('hex')
+	async setUserHash(login: string) {
 		const hash = createHmac('sha256', login + new Date().toUTCString()).digest(
 			'hex',
 		)
@@ -28,5 +27,10 @@ export class RedisService {
 		}, 1000000)
 
 		return hash
+	}
+
+	async getUserHash(login: string) {
+		const userHash = await this.client.get(login)
+		return userHash
 	}
 }

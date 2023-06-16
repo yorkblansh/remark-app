@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { IsEmail, IsObject, IsString } from 'class-validator'
 
-export class UserDto {
+export class LoginDto {
 	/**
 	 * email
 	 */

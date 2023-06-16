@@ -16,9 +16,10 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger'
 import { Form23ADto } from './dto/form23a.dto'
 import { Form16Dto } from './dto/form16.dto'
 import { PrismaService } from '../prisma.service'
-import { UserDto } from './dto/user.dto'
+import { LoginDto } from './dto/login.dto'
 import { RedisService } from '../redis/redis.service'
 import { User } from '.prisma/client'
+import { UserDataDto } from './dto/user.data.dto'
 
 @ApiTags('auth')
 @Controller('auth')
@@ -32,7 +33,7 @@ export class AuthController {
 	@HttpCode(HttpStatus.OK)
 	@Post('/login')
 	@ApiOperation({ summary: 'login user' })
-	async login(@Body() userData: UserDto) {
+	async login(@Body() userData: LoginDto) {
 		const { email, login, password } = userData
 		let user: User
 
@@ -48,7 +49,7 @@ export class AuthController {
 		}
 
 		if (user) {
-			const userHash = await this.redisService.setOnLoginTempKey(user.login)
+			const userHash = await this.redisService.setUserHash(user.login)
 			return { userHash }
 		} else {
 			throw new HttpException(
@@ -59,6 +60,17 @@ export class AuthController {
 				HttpStatus.UNAUTHORIZED,
 				{ cause: Error('userrr nottt found') },
 			)
+		}
+	}
+
+	@HttpCode(HttpStatus.OK)
+	@Post('/user_data')
+	@ApiOperation({ summary: 'user data' })
+	async userData(@Body() userData: UserDataDto) {
+		const { login, userHash } = userData
+		const redisUserHash = await this.redisService.getUserHash(login)
+		if (redisUserHash === userHash) {
+			return
 		}
 	}
 

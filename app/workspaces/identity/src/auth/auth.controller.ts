@@ -20,33 +20,22 @@ import { LoginDto } from './dto/login.dto'
 import { RedisService } from '../redis/redis.service'
 import { User } from '.prisma/client'
 import { UserDataDto } from './dto/user.data.dto'
+import { UserService } from '../user/user.service'
 
 @ApiTags('auth')
 @Controller('auth')
 export class AuthController {
 	constructor(
 		private readonly genpdfService: AuthService,
-		private readonly prismaService: PrismaService,
 		private readonly redisService: RedisService,
+		private readonly userService: UserService,
 	) {}
 
 	@HttpCode(HttpStatus.OK)
 	@Post('/login')
 	@ApiOperation({ summary: 'login user' })
 	async login(@Body() userData: LoginDto) {
-		const { email, login, password } = userData
-		let user: User
-
-		try {
-			user = await this.prismaService.user.findFirst({
-				where: {
-					OR: [{ login }, { email }],
-					AND: [{ password }],
-				},
-			})
-		} catch (FIND_USER_PRISMA_ERROR) {
-			console.log({ FIND_USER_PRISMA_ERROR })
-		}
+		this.userService.findUser(userData)
 
 		if (user) {
 			const userHash = await this.redisService.setUserHash(user.login)

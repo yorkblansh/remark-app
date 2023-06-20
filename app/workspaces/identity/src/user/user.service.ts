@@ -1,11 +1,19 @@
 import { Injectable } from '@nestjs/common'
 import { HttpService } from '@nestjs/axios'
-import { User } from '@prisma/client'
 import { PrismaService } from '../prisma.service'
+import { pipe } from 'fp-ts/lib/function'
+import * as E from 'fp-ts/lib/Either'
+import { Prisma, User } from '@prisma/client'
 
 type Prettify<T> = {
 	[K in keyof T]: T[K]
 } & {}
+
+export class FindUserDataError extends Error {
+	constructor(private readonly userLogin: string) {
+		super(`${userLogin} can not be found, db error`)
+	}
+}
 
 @Injectable()
 export class UserService {
@@ -14,19 +22,24 @@ export class UserService {
 		private readonly prismaService: PrismaService,
 	) {}
 
-	async findUser(userToFind: Prettify<Omit<User, 'id'>>) {
+	findUser(
+		userToFind: Prettify<Omit<User, 'id'>>,
+	): E.Either<FindUserDataError, User> {
 		const { email, login, password } = userToFind
-		let user: User
 
 		try {
-			return await this.prismaService.user.findFirst({
-				where: {
-					OR: [{ login }, { email }],
-					AND: [{ password }],
-				},
-			})
+			return pipe(
+				this.prismaService.user.findFirst({
+					where: {
+						OR: [{ login }, { email }],
+						AND: [{ password }],
+					},
+				}) as unknown as User,
+				E.right,
+			)
 		} catch (FIND_USER_PRISMA_ERROR) {
-			console.log({ FIND_USER_PRISMA_ERROR })
+			return E.left(new FindUserDataError(login))
+			// console.log({ FIND_USER_PRISMA_ERROR })
 		}
 	}
 }

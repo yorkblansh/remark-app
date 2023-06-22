@@ -19,7 +19,7 @@ import { LoginDto } from './dto/login.dto'
 import { RedisService } from '../redis/redis.service'
 import { UserDataDto } from './dto/user.data.dto'
 import { UserService } from '../user/user.service'
-import { pipe } from 'fp-ts/lib/function'
+import { flow, pipe } from 'fp-ts/lib/function'
 import * as E from 'fp-ts/lib/Either'
 import * as O from 'fp-ts/lib/Option'
 
@@ -36,23 +36,26 @@ export class AuthController {
 	@Post('/login')
 	@ApiOperation({ summary: 'login user' })
 	async login(@Body() userData: LoginDto) {
-		pipe(
+		return pipe(
 			userData,
 			this.userService.findUser,
-			E.map((user) =>
-				user
-					? E.right(this.redisService.setUserHash(user.login))
-					: E.left(
-							new HttpException(
-								{
-									status: HttpStatus.UNAUTHORIZED,
-									error: 'user not found',
-								},
-								HttpStatus.UNAUTHORIZED,
-								{ cause: Error('userrr nottt found') },
-							),
-					  ),
-			),
+			E.chainW((user): E.Either<HttpException, Promise<string>> => {
+				if (user) {
+					return E.right(this.redisService.setUserHash(user.login))
+				} else {
+					return E.left(
+						new HttpException(
+							{
+								status: HttpStatus.UNAUTHORIZED,
+								error: 'user not found',
+							},
+							HttpStatus.UNAUTHORIZED,
+							{ cause: Error('userrr nottt found') },
+						),
+					)
+				}
+			}),
+			E.getOrElseW((e) => e),
 		)
 	}
 }

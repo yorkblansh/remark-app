@@ -2,29 +2,37 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { pipe } from 'fp-ts/lib/function'
 import { App } from './App'
+import {
+	createBrowserRouter,
+	RouterProvider,
+	Route,
+	Link,
+} from 'react-router-dom'
+import { Login } from './pages/Login'
+import './index.scss'
 
-// const BARCODE_TEMPLATE = process.env.BARCODE_TEMPLATE as
-// 	| 'layout-prod'
-// 	| 'layout-dev'
-// 	| 'app-dev'
-// 	| 'app-prod'
-// 	| undefined
+const router = createBrowserRouter([
+	{
+		path: '/',
+		element: (
+			<div>
+				<h1>Hello World</h1>
+				<Link to="about">About Us</Link>
+			</div>
+		),
+	},
+	{
+		path: 'about',
+		element: <div>About</div>,
+	},
+	{
+		path: 'login',
+		element: <Login />,
+	},
+])
 
-// const NODE_ENV = process.env.NODE_ENV as 'development' | 'production'
-// const FORM_NAME = process.env.FORM_NAME as keyof typeof JsxFormsMap
-
-// const JsxBarcodeModesMap: {
-// 	[each in typeof BARCODE_TEMPLATE]: React.ReactNode
-// } = {
-// 	'layout-dev': <BarcodesLayout {...barcodesLayoutProps} />,
-// 	'layout-prod': <BarcodesLayout {...barcodesLayoutProps} />,
-// 	'app-dev': <BarcodeApp />,
-// 	'app-prod': <BarcodeApp />,
-// }
-
-// if (NODE_ENV === 'development') {
 pipe(
 	document.getElementById('root') as HTMLElement,
-	ReactDOM.createRoot
-).render(<App />)
-// }
+	ReactDOM.createRoot,
+	(root) => root.render(<RouterProvider router={router} />)
+)

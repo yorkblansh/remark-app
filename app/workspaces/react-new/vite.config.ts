@@ -31,7 +31,12 @@ export default defineConfig({
 		// hmr: { protocol: 'ws', host: 'localhost' },
 		watch: { usePolling: true, alwaysStat: true, persistent: true },
 	},
-	resolve: { preserveSymlinks: true },
+	resolve: {
+		preserveSymlinks: true,
+		alias: {
+			$fonts: resolve('./fonts'),
+		},
+	},
 	plugins: [
 		react({
 			include: '**/*.tsx',

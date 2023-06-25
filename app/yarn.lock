@@ -183,7 +183,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.1.0, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.20.12, @babel/core@npm:^7.21.4, @babel/core@npm:^7.7.5":
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.20.12, @babel/core@npm:^7.21.4, @babel/core@npm:^7.22.5, @babel/core@npm:^7.7.5":
   version: 7.22.5
   resolution: "@babel/core@npm:7.22.5"
   dependencies:
@@ -1446,7 +1446,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-react-jsx-self@npm:^7.18.6, @babel/plugin-transform-react-jsx-self@npm:^7.21.0":
+"@babel/plugin-transform-react-jsx-self@npm:^7.18.6, @babel/plugin-transform-react-jsx-self@npm:^7.21.0, @babel/plugin-transform-react-jsx-self@npm:^7.22.5":
   version: 7.22.5
   resolution: "@babel/plugin-transform-react-jsx-self@npm:7.22.5"
   dependencies:
@@ -1457,7 +1457,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-react-jsx-source@npm:^7.19.6":
+"@babel/plugin-transform-react-jsx-source@npm:^7.19.6, @babel/plugin-transform-react-jsx-source@npm:^7.22.5":
   version: 7.22.5
   resolution: "@babel/plugin-transform-react-jsx-source@npm:7.22.5"
   dependencies:
@@ -1635,7 +1635,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.20.2":
+"@babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.20.2, @babel/preset-env@npm:^7.22.5":
   version: 7.22.5
   resolution: "@babel/preset-env@npm:7.22.5"
   dependencies:
@@ -1769,7 +1769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-typescript@npm:^7.12.7, @babel/preset-typescript@npm:^7.18.6":
+"@babel/preset-typescript@npm:^7.12.7, @babel/preset-typescript@npm:^7.18.6, @babel/preset-typescript@npm:^7.22.5":
   version: 7.22.5
   resolution: "@babel/preset-typescript@npm:7.22.5"
   dependencies:
@@ -3251,7 +3251,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-slot@npm:^1.0.1":
+"@radix-ui/react-slot@npm:^1.0.2":
   version: 1.0.2
   resolution: "@radix-ui/react-slot@npm:1.0.2"
   dependencies:
@@ -3426,6 +3426,13 @@ __metadata:
   version: 1.6.3
   resolution: "@remix-run/router@npm:1.6.3"
   checksum: f6968b1626af930b42f8cb5a044f05e4fbce05af6c7947beb1704e45c9570944e3be16ee008b185e5e13baac97948299eb55341b2a359c3e2e54b9d6646ae167
+  languageName: node
+  linkType: hard
+
+"@remix-run/router@npm:1.7.0":
+  version: 1.7.0
+  resolution: "@remix-run/router@npm:1.7.0"
+  checksum: 80cab2fda9e4b9047c991e9b05b8bda8afa2adf7b85c785d7e6f593a399eb264d6a74302438babc81833b5d304eae0b22832f27552b1601e2ca9001d94b8e174
   languageName: node
   linkType: hard
 
@@ -5007,7 +5014,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bwip-js@npm:^3.0.0":
+"@types/bwip-js@npm:^3.0.0, @types/bwip-js@npm:^3.2.0":
   version: 3.2.0
   resolution: "@types/bwip-js@npm:3.2.0"
   dependencies:
@@ -5418,6 +5425,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-dom@npm:^18.2.6":
+  version: 18.2.6
+  resolution: "@types/react-dom@npm:18.2.6"
+  dependencies:
+    "@types/react": "*"
+  checksum: b56e42efab121a3a8013d2eb8c1688e6028a25ea6d33c4362d2846f0af3760b164b4d7c34846614024cfb8956cca70dd1743487f152e32ff89a00fe6fbd2be54
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:*, @types/react@npm:^18.0.27, @types/react@npm:^18.0.38":
   version: 18.2.12
   resolution: "@types/react@npm:18.2.12"
@@ -5426,6 +5442,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: ad85a7eadaf1b35cfeee9f715b39311420ff46d46e0650377d918b3f888c2e47416037da4a765e1dccd3d1916abd54c105a3bee803c971ba56c955a7768ce976
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.2.14":
+  version: 18.2.14
+  resolution: "@types/react@npm:18.2.14"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: a6a5e8cc78f486b9020d1ad009aa6c56943c68c7c6376e0f8399e9cbcd950b7b8f5d73f00200f5379f5e58d31d57d8aed24357f301d8e86108cd438ce6c8b3dd
   languageName: node
   linkType: hard
 
@@ -5769,6 +5796,20 @@ __metadata:
   peerDependencies:
     vite: ^4.2.0
   checksum: 575298f66517c51348892d49b302490c48e15c9ddb0b2c5f710931804e559dceafca1be1e62cb72d0902cba5f3c98e4b1272970d328e3a62d59ecdf976e68d3d
+  languageName: node
+  linkType: hard
+
+"@vitejs/plugin-react@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@vitejs/plugin-react@npm:4.0.1"
+  dependencies:
+    "@babel/core": ^7.22.5
+    "@babel/plugin-transform-react-jsx-self": ^7.22.5
+    "@babel/plugin-transform-react-jsx-source": ^7.22.5
+    react-refresh: ^0.14.0
+  peerDependencies:
+    vite: ^4.2.0
+  checksum: a0ec9349204fbe19ae301ffbe5734cb83e22fb4e8717b4b563a1edcec71796cc6194a9a39bccfc28d9531e83b0cf85949df57329f4063b21a06bfd2b0f0d31eb
   languageName: node
   linkType: hard
 
@@ -6601,6 +6642,65 @@ __metadata:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
   checksum: 8ee8345375be69fc4b242ecb46e72683be361e102fe306717adcd66b0d208cc82bdf0cb60ed1b557bf3611857e5516d2f69f79e408f262783599f6e36c8fe513
+  languageName: node
+  linkType: hard
+
+"antd@npm:^5.6.3":
+  version: 5.6.3
+  resolution: "antd@npm:5.6.3"
+  dependencies:
+    "@ant-design/colors": ^7.0.0
+    "@ant-design/cssinjs": ^1.10.1
+    "@ant-design/icons": ^5.1.0
+    "@ant-design/react-slick": ~1.0.0
+    "@babel/runtime": ^7.18.3
+    "@ctrl/tinycolor": ^3.6.0
+    "@rc-component/color-picker": ~1.2.0
+    "@rc-component/mutate-observer": ^1.0.0
+    "@rc-component/tour": ~1.8.0
+    "@rc-component/trigger": ^1.13.0
+    classnames: ^2.2.6
+    copy-to-clipboard: ^3.2.0
+    dayjs: ^1.11.1
+    qrcode.react: ^3.1.0
+    rc-cascader: ~3.12.0
+    rc-checkbox: ~3.1.0
+    rc-collapse: ~3.7.0
+    rc-dialog: ~9.1.0
+    rc-drawer: ~6.2.0
+    rc-dropdown: ~4.1.0
+    rc-field-form: ~1.32.0
+    rc-image: ~5.17.1
+    rc-input: ~1.0.4
+    rc-input-number: ~7.4.0
+    rc-mentions: ~2.3.0
+    rc-menu: ~9.9.2
+    rc-motion: ^2.7.3
+    rc-notification: ~5.0.4
+    rc-pagination: ~3.5.0
+    rc-picker: ~3.8.2
+    rc-progress: ~3.4.1
+    rc-rate: ~2.12.0
+    rc-resize-observer: ^1.2.0
+    rc-segmented: ~2.2.0
+    rc-select: ~14.5.0
+    rc-slider: ~10.1.0
+    rc-steps: ~6.0.0
+    rc-switch: ~4.1.0
+    rc-table: ~7.32.1
+    rc-tabs: ~12.7.0
+    rc-textarea: ~1.2.2
+    rc-tooltip: ~6.0.0
+    rc-tree: ~5.7.4
+    rc-tree-select: ~5.9.0
+    rc-upload: ~4.3.0
+    rc-util: ^5.32.0
+    scroll-into-view-if-needed: ^3.0.3
+    throttle-debounce: ^5.0.0
+  peerDependencies:
+    react: ">=16.9.0"
+    react-dom: ">=16.9.0"
+  checksum: 7ffe43b053383ee53c76213409ef8f6ef42b735ede79c7a0764579bc87ec44cc85dcdae03e82cc53ea3039fc23c0aecf1f6b6a75c6096e42d3c391627ca05a78
   languageName: node
   linkType: hard
 
@@ -7617,7 +7717,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bwip-js@npm:^3.3.0, bwip-js@npm:^3.4.0":
+"bwip-js@npm:^3.3.0, bwip-js@npm:^3.4.0, bwip-js@npm:^3.4.3":
   version: 3.4.3
   resolution: "bwip-js@npm:3.4.3"
   bin:
@@ -11213,7 +11313,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fp-ts@npm:^2.13.1":
+"fp-ts@npm:^2.13.1, fp-ts@npm:^2.16.0":
   version: 2.16.0
   resolution: "fp-ts@npm:2.16.0"
   checksum: 0724a4d8b2171cc98e9d9a05e6fe7e0acbc8c79eaabe8e257cbe3a6a5a77acdbdd2572e2ca8135e91d6e02542237499db6e952a58829ba0796ab96063dd39eb2
@@ -16616,7 +16716,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.18, postcss@npm:^8.4.23":
+"postcss@npm:^8.4.18, postcss@npm:^8.4.23, postcss@npm:^8.4.24":
   version: 8.4.24
   resolution: "postcss@npm:8.4.24"
   dependencies:
@@ -16650,7 +16750,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-css-order@npm:^1.3.0":
+"prettier-plugin-css-order@npm:^1.3.0, prettier-plugin-css-order@npm:^1.3.1":
   version: 1.3.1
   resolution: "prettier-plugin-css-order@npm:1.3.1"
   dependencies:
@@ -16725,7 +16825,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.7.1, prettier@npm:^2.8.1, prettier@npm:^2.8.7":
+"prettier@npm:^2.7.1, prettier@npm:^2.8.1, prettier@npm:^2.8.7, prettier@npm:^2.8.8":
   version: 2.8.8
   resolution: "prettier@npm:2.8.8"
   bin:
@@ -16977,7 +17077,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qrcode@npm:^1.5.1":
+"qrcode@npm:^1.5.1, qrcode@npm:^1.5.3":
   version: 1.5.3
   resolution: "qrcode@npm:1.5.3"
   dependencies:
@@ -17143,6 +17243,20 @@ __metadata:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
   checksum: 046b138e95c1b77fb0fb0d06ef3cdb00e34ae551adfe0a0b886cd0fb0ee34a98d1bef43a2c0122e6731862c2ec031d0d2fff9b4ea6c36857777532ad29115265
+  languageName: node
+  linkType: hard
+
+"rc-checkbox@npm:~3.1.0":
+  version: 3.1.0
+  resolution: "rc-checkbox@npm:3.1.0"
+  dependencies:
+    "@babel/runtime": ^7.10.1
+    classnames: ^2.3.2
+    rc-util: ^5.25.2
+  peerDependencies:
+    react: ">=16.9.0"
+    react-dom: ">=16.9.0"
+  checksum: f15dd3e3e3120567b633392e37c6d904f2b3c32eb752f4197231b6d79bfa257bde9cd32616ad08c0ad5b053d7b197c9e0684479053b4dea384e466ab53f5c7b4
   languageName: node
   linkType: hard
 
@@ -17361,7 +17475,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-picker@npm:~3.8.0":
+"rc-picker@npm:~3.8.0, rc-picker@npm:~3.8.2":
   version: 3.8.2
   resolution: "rc-picker@npm:3.8.2"
   dependencies:
@@ -17765,12 +17879,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "react-new@workspace:workspaces/react-new"
   dependencies:
-    "@babel/core": ^7.20.12
-    "@babel/preset-env": ^7.20.2
-    "@babel/preset-typescript": ^7.18.6
+    "@babel/core": ^7.22.5
+    "@babel/preset-env": ^7.22.5
+    "@babel/preset-typescript": ^7.22.5
     "@mdx-js/react": ^1.6.22
     "@nestjs/swagger": ^6.1.4
-    "@radix-ui/react-slot": ^1.0.1
+    "@radix-ui/react-slot": ^1.0.2
     "@storybook/addon-actions": ^6.5.16
     "@storybook/addon-docs": ^6.5.16
     "@storybook/addon-essentials": ^6.5.16
@@ -17780,34 +17894,34 @@ __metadata:
     "@storybook/react": ^6.5.16
     "@storybook/testing-library": ^0.0.13
     "@syncfusion/ej2-barcode-generator": ^20.4.48
-    "@types/bwip-js": ^3.0.0
+    "@types/bwip-js": ^3.2.0
     "@types/qrcode": ^1.5.0
-    "@types/react": ^18.0.38
-    "@types/react-dom": ^18.0.11
-    "@vitejs/plugin-react": ^4.0.0
-    antd: ^5.5.0
+    "@types/react": ^18.2.14
+    "@types/react-dom": ^18.2.6
+    "@vitejs/plugin-react": ^4.0.1
+    antd: ^5.6.3
     autoprefixer: ^10.4.14
     babel-loader: ^8.3.0
-    bwip-js: ^3.3.0
+    bwip-js: ^3.4.3
     class-transformer: ^0.5.1
     class-validator: ^0.14.0
     class-variance-authority: ^0.6.0
     clsx: ^1.2.1
     cross-env: ^7.0.3
-    fp-ts: ^2.13.1
+    fp-ts: ^2.16.0
     jsbarcode: ^3.11.5
     lucide-react: ^0.221.0
-    postcss: ^8.4.23
-    prettier: ^2.8.7
-    prettier-plugin-css-order: ^1.3.0
+    postcss: ^8.4.24
+    prettier: ^2.8.8
+    prettier-plugin-css-order: ^1.3.1
     prettier-plugin-tailwindcss: ^0.2.7
-    qrcode: ^1.5.1
+    qrcode: ^1.5.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-router-dom: ^6.11.2
-    sass: ^1.62.0
+    react-router-dom: ^6.14.0
+    sass: ^1.63.6
     typescript: ^4.9.3
-    vite: ^4.3.1
+    vite: ^4.3.9
     vite-plugin-singlefile: ^0.13.5
   languageName: unknown
   linkType: soft
@@ -17851,6 +17965,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-router-dom@npm:^6.14.0":
+  version: 6.14.0
+  resolution: "react-router-dom@npm:6.14.0"
+  dependencies:
+    "@remix-run/router": 1.7.0
+    react-router: 6.14.0
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 66800b8779f5ae9f8b8e1f41e25599519a40c532e020a8c1450e1645d2c8cc8351e51ed0f2516584681e9a509c6c40f629f2d80663123e132c68022c0edced03
+  languageName: node
+  linkType: hard
+
 "react-router@npm:6.13.0":
   version: 6.13.0
   resolution: "react-router@npm:6.13.0"
@@ -17859,6 +17986,17 @@ __metadata:
   peerDependencies:
     react: ">=16.8"
   checksum: 31a187005d05e063c59324564a283cd28052eaf848ad446c87658f4fc48fa9543329fe8a14d7be14d9bbf62410d383f8cf1cf13898a838bf9c1e3201fe93384c
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.14.0":
+  version: 6.14.0
+  resolution: "react-router@npm:6.14.0"
+  dependencies:
+    "@remix-run/router": 1.7.0
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 50a941746d12e81cea5495505c1afbcd099cc7d497624b013454cfd5a360d9403578f8fb3df17973bf775fbff91cb76477448023d537215e6aa71a8b85ae95bd
   languageName: node
   linkType: hard
 
@@ -18690,6 +18828,19 @@ __metadata:
   bin:
     sass: sass.js
   checksum: 12bde5beff85a7018157d90c8b9d5aec8b56832f89fcfeca146f10936eecf97e669d22fd41f812b3407ed259bbb114d69c9ecbfc7ee9b15308211fb910cdf5eb
+  languageName: node
+  linkType: hard
+
+"sass@npm:^1.63.6":
+  version: 1.63.6
+  resolution: "sass@npm:1.63.6"
+  dependencies:
+    chokidar: ">=3.0.0 <4.0.0"
+    immutable: ^4.0.0
+    source-map-js: ">=0.6.2 <2.0.0"
+  bin:
+    sass: sass.js
+  checksum: 3372319904658eeafaf78a09a6fcb3368a68e6d76fe3c43c2d009f4f72e475ab22b82ef483ef5c00fcda3ab00066846c0bd88c36b42771b855f6ab80c7eda541
   languageName: node
   linkType: hard
 
@@ -21110,7 +21261,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.3.1":
+"vite@npm:^4.3.1, vite@npm:^4.3.9":
   version: 4.3.9
   resolution: "vite@npm:4.3.9"
   dependencies:

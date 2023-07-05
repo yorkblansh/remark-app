@@ -1,4 +1,7 @@
 services:
-  gateway-api:
+  # identity-api:
+  #   volumes:
+  #     - ../app/workspaces/identity:/app
+  api:
     volumes:
       - ../app:/app

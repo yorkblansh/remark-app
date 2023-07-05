@@ -42,6 +42,7 @@
 		"axios": "^1.3.6",
 		"bwip-js": "^3.4.0",
 		"number-to-words-ru": "https://github.com/yorkblansh/number-to-words-ru.git",
+		"sass": "^1.63.6",
 		"to-words": "^3.5.0",
 		"yush": "git+https://github.com/yorkblansh/yush.git#dev-cmdList"
 	}

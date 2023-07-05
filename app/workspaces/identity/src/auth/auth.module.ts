@@ -9,6 +9,6 @@ import { UserService } from '../user/user.service'
 @Module({
 	imports: [HttpModule],
 	controllers: [AuthController],
-	providers: [AuthService, RedisService, UserService],
+	providers: [AuthService, RedisService, UserService, PrismaService],
 })
 export class AuthModule {}

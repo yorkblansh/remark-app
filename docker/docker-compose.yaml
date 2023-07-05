@@ -1,11 +1,11 @@
 version: "3.8"
 
 services:
-  gateway-api:
+  api:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     # network_mode: "host"
-    container_name: gateway-api-${ENV_MODE}
+    container_name: api-${ENV_MODE}
     build:
       context: ../app
       dockerfile: ../docker/Dockerfile.app.${ENV_MODE}
@@ -17,6 +17,23 @@ services:
     tty: true
     stdin_open: true
     restart: on-failure
+
+  # identity-api:
+  #   extra_hosts:
+  #     - "host.docker.internal:host-gateway"
+  #   # network_mode: "host"
+  #   container_name: identity-api-${ENV_MODE}
+  #   build:
+  #     context: ../app/workspaces/identity
+  #     dockerfile: ./docker/Dockerfile.identity.${ENV_MODE}
+  #   # ports:
+  #   #   - 85:5055
+  #   #   - 5172:5172
+  #   env_file:
+  #     - ../configs/.env
+  #   tty: true
+  #   stdin_open: true
+  #   restart: on-failure
 
   redis:
     extra_hosts:

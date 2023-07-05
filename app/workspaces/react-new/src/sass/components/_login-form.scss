@@ -13,6 +13,10 @@
 	background-color: hsl(0, 0%, 100%);
 	padding: 18px;
 
+	& > h1 {
+		align-self: center;
+	}
+
 	& > div {
 		font-family: KairosSans;
 		// font: 16px/1.2 Trebuchet MS, sans-serif !important;
@@ -22,12 +26,12 @@
 	& > form {
 		display: flex;
 		flex-direction: column;
-		gap: 10px;
+		// gap: 10px;
 
 		& > label {
 			display: flex;
 			flex-direction: column;
-			gap: 2px;
+			// gap: 2px;
 
 			& > input {
 				border-style: none;

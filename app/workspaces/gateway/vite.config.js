@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import { VitePluginNode } from 'vite-plugin-node'
 import react from '@vitejs/plugin-react'
 
+console.log({ prcs: process.env })
+
 export default defineConfig({
 	// ...vite configures
 	resolve: { preserveSymlinks: true },
@@ -47,6 +49,5 @@ export default defineConfig({
 			// '@apollo/subgraph',
 		],
 		include: ['@nestjs/common'],
-
 	},
 })

@@ -9,6 +9,30 @@ import { DepartmentDto } from './dto/department.dto'
 import { pathToStatic } from './utils/pathToStatic'
 import path from 'path'
 import { readFileAsync } from './utils/readFileAsync'
+import { microservices, msHttpAddress } from './utils/msAddress'
+import * as E from 'fp-ts/es6/Either'
+import { AuthRoutes } from '../../identity/src/auth/auth.controller'
+
+enum kk {
+	'auth' = 'auth',
+	'kk' = 'kk',
+}
+
+const fetchMs = <
+	T extends microservices,
+	DEST extends keyof typeof AuthRoutes = T extends 'identity'
+		? keyof typeof AuthRoutes
+		: never,
+>(
+	ms: T,
+	dest: DEST,
+): E.Either<never, Promise<Response>> => {
+	try {
+		return pipe(fetch(msHttpAddress(ms) + dest), E.right)
+	} catch (error) {
+		E.left(error)
+	}
+}
 
 @Controller()
 export class AppController {
@@ -20,125 +44,8 @@ export class AppController {
 		return 'sss'
 	}
 
-	@Get('/barcoder')
-	async barcoder() {
-		const kk = await pipe(
-			'',
-			pathToStatic('barcodeApp'),
-			path.resolve,
-			readFileAsync,
-		)
-		// console.log({ kk })
-		return kk
-	}
-
-	@Post('/abbrev')
-	async getAbbrev() {
-		console.log('abbrev')
-
-		return await fetch('http://10.212.1.4:1401/abbrev', {
-			method: 'POST',
-			headers: {
-				'content-type': 'application/json',
-			},
-		})
-			.then((a) => a.json().then((json) => json))
-			.catch((e) => {
-				console.log({ e })
-			})
-	}
-
-	@Post('/department')
-	@ApiOperation({ summary: 'get get department info' })
-	@ApiResponse({ status: 200 })
-	async getDepartmentInfo(@Body() body: DepartmentDto) {
-		const { index } = body
-		const r = await pipe(
-			await fetch(
-				`http://ops.pochta-lnr.ru/api/postoffices/${index}?api_token=YQDdtS6NqdzE164cTUbNfWjL507HH8iB0nVModvT6b1Qw6zY441hunkSP7uu`,
-				{
-					method: 'GET',
-				},
-			),
-			async (r) => await r.text(),
-		)
-
-		return r
-	}
-
-	@Post('/datamatrixform16')
-	@ApiOperation({ summary: 'get datamatrix string' })
-	@ApiResponse({ status: 200 })
-	async getDatamatrixOnForm16(@Body() body: DatamatrixRequestDto) {
-		const form16Data: Form16Data[] = await pipe(
-			await fetch('http://10.212.1.4:1401/f16', {
-				method: 'PUT',
-				headers: {
-					'content-type': 'application/json',
-				},
-				body: JSON.stringify(body),
-			}),
-			async (r) => await r.json(),
-		)
-		// const {
-		// 	attrBag,
-		// 	barcode,
-		// 	date,
-		// 	index,
-		// 	itemsCount,
-		// 	model,
-		// 	pageItems,
-		// 	pageNumber,
-		// 	sizeMailCtg,
-		// 	sizeMailRank,
-		// 	sizeMailType,
-		// 	sizePayment,
-		// 	sizePostMark,
-		// 	sizeTransType,
-		// 	sizeValue,
-		// 	sizeWeight,
-		// 	typeBag,
-		// 	typeTara,
-		// 	qrPosition,
-		// 	pagesCount,
-		// 	items,
-		// } = form16Data[0]
-
-		// const qrcodeRequest: QrcodeRequestDto = {
-		// 	attrBag,
-		// 	barcode,
-		// 	date,
-		// 	index,
-		// 	items,
-		// 	itemsCount,
-		// 	model,
-		// 	pageItems,
-		// 	pageNumber,
-		// 	pagesCount,
-		// 	qrPosition,
-		// 	sizeMailCtg,
-		// 	sizeMailRank,
-		// 	sizeMailType,
-		// 	sizePayment,
-		// 	sizePostMark,
-		// 	sizeTransType,
-		// 	sizeValue,
-		// 	sizeWeight,
-		// 	typeBag,
-		// 	typeTara,
-		// }
-
-		const datamatrix = await pipe(
-			await fetch('http://10.212.1.4:1401/qrcode', {
-				method: 'PUT',
-				headers: {
-					'content-type': 'application/json',
-				},
-				body: JSON.stringify(form16Data[0]),
-			}),
-			async (r) => await r.text(),
-		)
-
-		return datamatrix
+	@Post()
+	loginUser() {
+		fetchMs('identity', '/login')
 	}
 }

@@ -3,7 +3,7 @@ import { pipe } from 'fp-ts/es6/function'
 export const login = () =>
 	pipe(
 		fetch(`http://localhost:85/`, {
-			method: 'GET',
+			method: 'POST',
 			// headers: { 'content-type': 'application/json' },
 			// body: JSON.stringify({
 			// 	type,

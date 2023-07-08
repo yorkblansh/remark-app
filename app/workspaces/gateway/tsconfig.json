@@ -18,7 +18,7 @@
 		"strictBindCallApply": false,
 		"forceConsistentCasingInFileNames": false,
 		"noFallthroughCasesInSwitch": false,
-		"jsx": "react"
-		// "strict": true
+		"jsx": "react",
+		"strict": true
 	}
 }

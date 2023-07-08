@@ -2,11 +2,14 @@ import { ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 import { AppModule } from './app.module'
+import { msHttpAddress } from '../../gateway/src/utils/msAddress'
 
 console.log({
 	import_meta_env: import.meta.env,
 	process_env: process.env,
 })
+
+console.log({ dd: msHttpAddress('files') })
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule)

@@ -23,6 +23,10 @@ import { flow, pipe } from 'fp-ts/lib/function'
 import * as E from 'fp-ts/lib/Either'
 import * as O from 'fp-ts/lib/Option'
 
+export enum AuthRoutes {
+	'/login' = '/login',
+}
+
 @ApiTags('auth')
 @Controller('auth')
 export class AuthController {
@@ -33,7 +37,7 @@ export class AuthController {
 	) {}
 
 	@HttpCode(HttpStatus.OK)
-	@Post('/login')
+	@Post(AuthRoutes['/login'])
 	@ApiOperation({ summary: 'login user' })
 	async login(@Body() userData: LoginDto) {
 		return pipe(

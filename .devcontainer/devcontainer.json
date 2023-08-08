@@ -7,7 +7,17 @@
 	"build": {
         // Path is relative to the devcontainer.json file.
         "dockerfile": "../docker/Dockerfile.app.dev"
-    }
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"esbenp.prettier-vscode",
+				"GitHub.github-vscode-theme",
+				"vscode-icons-team.vscode-icons"
+			]
+		}
+	}
 
 	,
 	// Features to add to the dev container. More info: https://containers.dev/features.

@@ -41,7 +41,8 @@
   },
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  },
+  "workbench.iconTheme": "vscode-icons"
 
   // "todo-tree.highlights.customHighlight": {
   //   // "TODO": {

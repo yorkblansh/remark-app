@@ -5,8 +5,8 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "mcr.microsoft.com/devcontainers/base:jammy"
 	"build": {
-        // Path is relative to the devcontainer.json file.
-        "dockerfile": "../docker/Dockerfile.app.dev"
+		// Path is relative to the devcontainer.json file.
+		"dockerfile": "../docker/Dockerfile.app.dev"
 	},
 	"customizations": {
 		"vscode": {
@@ -18,8 +18,6 @@
 			]
 		}
 	}
-
-	,
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 

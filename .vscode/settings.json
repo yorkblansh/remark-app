@@ -43,7 +43,7 @@
 		"editor.defaultFormatter": "foxundermoon.shell-format"
 	},
 	"workbench.iconTheme": "vscode-icons",
-	"workbench.colorTheme": "GitHub Dark",
+	"workbench.colorTheme": "GitHub Light",
 	"editor.bracketPairColorization.enabled": false
 
 	// "todo-tree.highlights.customHighlight": {

@@ -1,64 +1,65 @@
 {
-  // "search.exclude": {
-  //   "**/.yarn": true,
-  //   "**/.pnp.*": true
-  // },
-  // "prettier.prettierPath": "forms-api/.yarn/sdks/prettier/index.js",
-  // "typescript.tsdk": "forms-api/.yarn/sdks/typescript/lib",
-  // "typescript.enablePromptUseWorkspaceTsdk": true
-  "yaml.schemas": {
-    "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/babelrc.json": ".qwertylint.yaml"
-  },
-  "docker.commands.attach": "${containerCommand} exec -it ${containerId} fish",
-  "terminal.integrated.rightClickBehavior": "nothing",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  // "files.associations": { "*.scss": "postcss" },
-  "todo-tree.highlights.customHighlight": {
-    "LAY": {
-      "background": "#30c3e7",
-      "foreground": "white",
-      "icon": "browser",
-      "rulerColour": "blue",
-      "iconColour": "blue",
-      "gutterIcon": true
-    },
-    "INFO": {
-      "background": "#bd41e2",
-      "foreground": "white",
-      // "icon": "browser",
-      "rulerColour": "blue",
-      "iconColour": "blue",
-      "gutterIcon": true
-    }
-  },
-  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "LAY", "INFO"],
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
-  },
-  "[dotenv]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.colorTheme": "Default Dark Modern"
+	// "search.exclude": {
+	//   "**/.yarn": true,
+	//   "**/.pnp.*": true
+	// },
+	// "prettier.prettierPath": "forms-api/.yarn/sdks/prettier/index.js",
+	// "typescript.tsdk": "forms-api/.yarn/sdks/typescript/lib",
+	// "typescript.enablePromptUseWorkspaceTsdk": true
+	"yaml.schemas": {
+		"https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/babelrc.json": ".qwertylint.yaml"
+	},
+	"docker.commands.attach": "${containerCommand} exec -it ${containerId} fish",
+	"terminal.integrated.rightClickBehavior": "nothing",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	// "files.associations": { "*.scss": "postcss" },
+	"todo-tree.highlights.customHighlight": {
+		"LAY": {
+			"background": "#30c3e7",
+			"foreground": "white",
+			"icon": "browser",
+			"rulerColour": "blue",
+			"iconColour": "blue",
+			"gutterIcon": true
+		},
+		"INFO": {
+			"background": "#bd41e2",
+			"foreground": "white",
+			// "icon": "browser",
+			"rulerColour": "blue",
+			"iconColour": "blue",
+			"gutterIcon": true
+		}
+	},
+	"todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "LAY", "INFO"],
+	"[shellscript]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	"[prisma]": {
+		"editor.defaultFormatter": "Prisma.prisma"
+	},
+	"[dotenv]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	"workbench.iconTheme": "vscode-icons",
+	"workbench.colorTheme": "GitHub Dark",
+	"editor.bracketPairColorization.enabled": false
 
-  // "todo-tree.highlights.customHighlight": {
-  //   // "TODO": {
-  //   //   "icon": "check",
-  //   //   "type": "line"
-  //   // },
-  //   // "FIXME": {
-  //   //   "foreground": "black",
-  //   //   "iconColour": "yellow",
-  //   //   "gutterIcon": true
-  //   // }
-  //   "INFO": {
-  //     "foreground": "black",
-  //     "background": "#66a8ff",
-  //     "icon": "table"
-  //   }
-  // }
+	// "todo-tree.highlights.customHighlight": {
+	//   // "TODO": {
+	//   //   "icon": "check",
+	//   //   "type": "line"
+	//   // },
+	//   // "FIXME": {
+	//   //   "foreground": "black",
+	//   //   "iconColour": "yellow",
+	//   //   "gutterIcon": true
+	//   // }
+	//   "INFO": {
+	//     "foreground": "black",
+	//     "background": "#66a8ff",
+	//     "icon": "table"
+	//   }
+	// }
 }

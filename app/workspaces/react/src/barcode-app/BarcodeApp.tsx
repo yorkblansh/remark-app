@@ -24,10 +24,6 @@ import {
 	Collapse,
 	Divider,
 	Radio,
-
-
-
-	
 	Space,
 } from 'antd'
 import { CaretRightOutlined, CheckCircleOutlined } from '@ant-design/icons'
@@ -113,7 +109,7 @@ const BarcodeForm = () => {
 		// console.log({
 		// 	barcodeImageBase64,
 		// })
-		// const barcodeItems: BarcodeItemProps[] = await Promise.all(
+		// const barcodeItems: BarcodeItemProps[] = await 1Promise.all(
 		// 	barcodeRange.map(async (barcodeNumber) => ({
 		// 		barcodeBase64,
 		// 		barcodeNumber,

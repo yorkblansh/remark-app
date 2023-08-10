@@ -16,7 +16,13 @@
 				"esbenp.prettier-vscode",
 				"GitHub.github-vscode-theme",
 				"vscode-icons-team.vscode-icons",
-				"ms-vsliveshare.vsliveshare"
+				"ms-vsliveshare.vsliveshare",
+				"anseki.vscode-color",
+				"dbaeumer.vscode-eslint",
+				"mhutchie.git-graph",
+				"eamodio.gitlens",
+				"Gruntfuggly.todo-tree",
+				"redhat.vscode-yaml"
 			]
 		}
 	},

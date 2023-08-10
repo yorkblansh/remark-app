@@ -1,6 +1,6 @@
 FROM node:18
 
-RUN apt-get update && apt-get install fish vim curl sudo tmux -y && \
+RUN apt-get update && apt-get install fish vim curl sudo tmux fonts-powerline mc -y && \
     echo "fish" >>~/.bashrc
 
 RUN echo 'root:123' | chpasswd
@@ -24,7 +24,7 @@ RUN mkdir -p ~/.config/fish
 RUN echo "alias tmux='tmux -2'" >>~/.config/fish/config.fish
 RUN echo "set -g default-terminal 'xterm-256color' \n set-option -ga terminal-overrides ',xterm-256color:Tc'" >>~/.tmux.conf
 
-WORKDIR /app
+# WORKDIR /app
 
 ENV PORT=5055
 
